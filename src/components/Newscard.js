@@ -15,7 +15,7 @@ export default function Newscard(props) {
             <div className="content">
                 <h3>{props.title}</h3>
                 <h5>{props.desc}</h5>
-                <button >Listen</button>
+                <button>Listen</button>
             </div>
             
         </div>
