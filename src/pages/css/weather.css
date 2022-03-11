@@ -154,7 +154,8 @@ body {
   max-height: 100px;
 }
 .logo img{
-  max-height: 100px;
+  max-height: 70px;
+  max-width: 150px;
 }
 
 .navbar {
