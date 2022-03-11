@@ -21,7 +21,6 @@ function Weather() {
     document.querySelector(".description").innerText= respdata["weather"][0]["main"] ;
   }
 
-    console.log(respdata)
   }
   return (
     <>

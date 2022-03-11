@@ -17,7 +17,7 @@ export default function Newscomp() {
         <div class="container" style={{backgroundColor:'white'}}>
             {data.map((element) =>{
                 return(
-                    <Newscard title={element.title} desc={element.description} pic={element.urlToImage} key={element.title}  />
+                    <Newscard title={element.title} desc={element.description} url={element.url} pic={element.urlToImage} key={element.title}  />
                 )
             })}
         </div>

@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import { Redirect } from 'react-router-dom';
+import Logo from '../pages/logo.png'
 
 
 export default function Navbar() {
@@ -22,40 +22,36 @@ export default function Navbar() {
         for(i=0;i<10;i++){
              readData= readData + " . " + resdata.articles[i].title;
         }
-        console.log(readData)
         readOutt(readData)
     }
     const topTenSports = async() => {
         let readData="",i;
-        const dataa= await fetch("https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=0c34f30a18834d88b138420e473a2320");
+        const dataa= await fetch("https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=0c34f30a18834d88b138420e473a2320");
         const resdata=await dataa.json();
         // setdata(resdata.articles)
         for(i=0;i<10;i++){
              readData= readData + " . " + resdata.articles[i].title;
         }
-        console.log(readData)
         readOutt(readData)
     }
     const topTenEnt = async() => {
         let readData="",i;
-        const dataa= await fetch("https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=0c34f30a18834d88b138420e473a2320");
+        const dataa= await fetch("https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=0c34f30a18834d88b138420e473a2320");
         const resdata=await dataa.json();
         // setdata(resdata.articles)
         for(i=0;i<10;i++){
              readData= readData + " . " + resdata.articles[i].title;
         }
-        console.log(readData)
         readOutt(readData)
     }
     const topTenPolitics = async() => {
         let readData="",i;
-        const dataa= await fetch("https://newsapi.org/v2/top-headlines?country=us&category=politics&apiKey=0c34f30a18834d88b138420e473a2320");
+        const dataa= await fetch("https://newsapi.org/v2/top-headlines?country=in&category=politics&apiKey=0c34f30a18834d88b138420e473a2320");
         const resdata=await dataa.json();
         // setdata(resdata.articles)
         for(i=0;i<10;i++){
              readData= readData + " . " + resdata.articles[i].title;
         }
-        console.log(readData)
         readOutt(readData)
     }
     async function readOutt(message){
@@ -74,7 +70,7 @@ export default function Navbar() {
         
         <div>
             <nav class="navbar">
-  <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/2/23/AS_sample_logo.png" alt="LOGO"/></div>
+  <div class="logo"><img src={Logo} alt="LOGO"/></div>
   <div class="push-left">
     <button id="menu-toggler" data-class="menu-active" class="hamburger">
       <span class="hamburger-line hamburger-line-top"></span>
