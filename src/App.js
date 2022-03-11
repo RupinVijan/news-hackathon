@@ -1,21 +1,21 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import Newscomp from './pages/Newscomp';
+// import Newscomp from './pages/Newscomp';
 import Weather from './pages/Weather';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
 
     <Router>
       <Routes>
-        <Route path="/" element={<Newscomp />} />
-        <Route path="/weather" element={<Weather />} />
+        {/* <Route path="/" element={<Newscomp />} /> */}
+        <Route path="/" element={<Weather />} />
       </Routes>
     </Router>
-    <Newscomp/>
+    {/* <Newscomp/> */}
     </>
   );
 }
