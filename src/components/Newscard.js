@@ -19,13 +19,17 @@ function ReadButton(props){
 
 export default function Newscard(props) {
     return (
-        <div className="card">
-            <img src={props.pic} alt=""/>
-            <div className="content">
-                <h3>{props.title}</h3>
-                <h5>{props.desc}</h5>
-                <ReadButton title={props.title} />
+        <div>
+
+            <div class="card-news">
+        <div class="card-news_image">
+        <img src={props.pic} alt=""/>
             </div>
+        <h2> {props.title} </h2>
+        <p> {props.desc}</p>
+        <a href=""> READ MORE</a>
+        <a href=""> LISTEN  </a>
+    </div>
             
         </div>
     )

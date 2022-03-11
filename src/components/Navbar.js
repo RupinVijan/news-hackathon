@@ -1,9 +1,19 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import { Redirect } from 'react-router-dom';
 
 
 export default function Navbar() {
-    // let [data, setdata] =useState([]);
-    // let [rdata, setrdata] =useState("");
+    function responsive () {
+  
+            document.getElementById("menu-toggler").click(function() {
+              toggleBodyClass("menu-active");
+            });
+          
+            function toggleBodyClass(className) {
+              document.body.classList.toggle(className);
+            }
+          
+    }
     const topTen = async() => {
         let readData="",i;
         const dataa= await fetch("https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=0c34f30a18834d88b138420e473a2320");
@@ -57,21 +67,42 @@ export default function Navbar() {
         await window.speechSynthesis.speak(speech);
     }
 
-    // useEffect(() => {
-    //     ne();
-    // }, [])
+    useEffect(() => {
+        responsive();
+    }, [])
     return (
         
         <div>
-            <div id="left">
-                News Reg
-            </div>
-            <nav>
-                <button onClick={topTen}>Top 10 News</button>
-                <button onClick={topTenSports}>Top 10 Sports News</button>
-                <button onClick={topTenEnt}>Top 10 Entertainment News</button>
-                <button onClick={topTenPolitics}>Top 10 Politics News</button>
-            </nav>
+            <nav class="navbar">
+  <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/2/23/AS_sample_logo.png" alt="LOGO"/></div>
+  <div class="push-left">
+    <button id="menu-toggler" data-class="menu-active" class="hamburger">
+      <span class="hamburger-line hamburger-line-top"></span>
+      <span class="hamburger-line hamburger-line-middle"></span>
+      <span class="hamburger-line hamburger-line-bottom"></span>
+    </button>
+
+    <ul id="primary-menu" class="menu nav-menu">
+      <li class="menu-item current-menu-item"><button class="nav__link" ><a href="/">Home </a></button></li>
+      <li class="menu-item current-menu-item"><button class="nav__link"  ><a href="/weather">Weather </a></button></li>
+      <li class="menu-item dropdown"><button class="nav__link" onClick={topTen} >Top News</button>
+         
+
+      </li>
+      <li class="menu-item dropdown"><button class="nav__link"  onClick={topTenSports} >Sports</button>
+        
+      </li>
+      <li class="menu-item "><button class="nav__link" onClick={topTenEnt} >Entertainment</button>
+      </li>
+      <li class="menu-item "><button class="nav__link"  onClick={topTenPolitics} >Politics</button>
+       
+      </li>
+    </ul>
+
+
+  </div>
+</nav>
+
             
         </div>
     )

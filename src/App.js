@@ -11,8 +11,8 @@ function App() {
 
     <Router>
       <Routes>
-        <Route path="/news" element={<Newscomp />} />
-        <Route path="/" element={<Weather />} />
+        <Route path="/" element={<Newscomp />} />
+        <Route path="/weather" element={<Weather />} />
       </Routes>
     </Router>
     {/* <Newscomp/> */}
