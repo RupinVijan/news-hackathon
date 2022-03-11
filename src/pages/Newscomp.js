@@ -5,7 +5,7 @@ export default function Newscomp() {
     
     let [data, setdata] =useState([]);
     async function ne(){
-        const dataa= await fetch("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0c34f30a18834d88b138420e473a2320");
+        const dataa= await fetch("https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=0c34f30a18834d88b138420e473a2320");
         const resdata=await dataa.json();
         setdata(resdata.articles)
     }

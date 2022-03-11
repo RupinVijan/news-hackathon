@@ -2,12 +2,14 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Newscomp from './pages/Newscomp';
 import Weather from './pages/Weather';
+import {useState} from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
+  const [genre, setgenre] = useState("business");
   return (
     <>
-    <Navbar/>
+    <Navbar  />
 
     <Router>
       <Routes>
