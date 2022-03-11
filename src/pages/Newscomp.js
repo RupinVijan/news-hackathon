@@ -5,7 +5,7 @@ export default function Newscomp() {
     
     let [data, setdata] =useState([]);
     async function ne(){
-        const dataa= await fetch("https://newsapi.org/v2/everything?domains=wsj.com&apiKey=f46396e98dc9464aac982d018005876e");
+        const dataa= await fetch("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0c34f30a18834d88b138420e473a2320");
         const resdata=await dataa.json();
         setdata(resdata.articles)
     }
@@ -17,7 +17,7 @@ export default function Newscomp() {
         <div id="newcomp">
             {data.map((element) =>{
                 return(
-                    <Newscard title={element.title.slice(0,50)} desc={element.description.slice(0,100)} pic={element.urlToImage} key={element.title}  />
+                    <Newscard title={element.title} desc={element.description} pic={element.urlToImage} key={element.title}  />
                 )
             })}
         </div>
